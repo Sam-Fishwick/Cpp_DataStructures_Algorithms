@@ -43,7 +43,7 @@ void binarySearch(int number, int *arra, int count, int low, int high) {
         cout << "Removing all elements equal to or lesser than " << arra[mid] << " from the scope" << endl;
         binarySearch(number, arra, count, mid+1, high);
     } else if (number < arra[mid]) {
-        cout << "The number " << number << " is lower than the middle value" << endl;
+        cout << "The number " << number << " is lower than the value at position " << mid+1 << " in the array" << endl;
         cout << "Removing all elements equal to or greater than " << arra[mid] << " from the scope" << endl;
         binarySearch(number, arra, count, low, mid-1);
     }
