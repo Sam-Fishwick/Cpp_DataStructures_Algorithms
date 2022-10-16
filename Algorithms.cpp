@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -12,33 +13,42 @@ int numInput() {
         cin.clear();
         cin >> num;
     }
-    if (num == 69) { cout << "Nice!" << endl; }
     cout << "You chose the number " << num << endl;
+    if (num == 69) { cout << "(Nice!)" << endl; }
+    cout << endl;
     return num;
 }
 
 
 void linearSearch(int nu, int *array, int n) {
+    auto old = std::chrono::steady_clock::now();
     int i;
     for (i = 0; i < n; i++) {
         cout << "Checking the number at position " << i+1 << " of the array" << endl;
         if (array[i] == nu) {
-            cout << "The number " << nu << " is at position " << i+1 << " in the array" << endl;
+            cout << "The number " << nu << " is at position " << i+1 << " in the array\n" << endl;
             break;
         }
     }
     if (i == n) {
-        cout << "The number " << nu << " isn't in the array" << endl;
+        cout << "The number " << nu << " isn't in the array\n" << endl;
     }
+    auto dur = std::chrono::steady_clock::now() - old;
+    cout << "This linear search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
 }
 
 
 void binarySearch(int number, int *arra, int count, int low, int high) {
+    auto old = std::chrono::steady_clock::now();
     int mid = (low + high)/2;
     if (low > high || mid+1 > high) {
-        cout << "The number " << number << " isn't in the array" << endl;
+        cout << "The number " << number << " isn't in the array\n" << endl;
+        auto dur = std::chrono::steady_clock::now() - old;
+        cout << "This binary search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
     } else if (number == arra[mid]) {
-        cout << "The number " << number << " is at position " << mid+1 << " in the array" << endl;
+        cout << "The number " << number << " is at position " << mid+1 << " in the array\n" << endl;
+        auto dur = std::chrono::steady_clock::now() - old;
+        cout << "This binary search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
     } else if (number > arra[mid]) {
         cout << "The number " << number << " is higher than the value at position " << mid+1 << " in the array" << endl;
         cout << "Removing all elements equal to or lesser than " << arra[mid] << " from the scope" << endl;
@@ -64,19 +74,19 @@ int main() {
     }
     switch (input) {
         case 1:
-            cout << "You have chosen the linear search algorithm" << endl;
+            cout << "You chose the linear search algorithm\n" << endl;
             numb = numInput();
-            cout << "Searching the number " << numb << " in a " << hi << " element array using linear search" << endl;
+            cout << "Searching the number " << numb << " in a " << hi << " element array using linear search\n" << endl;
             linearSearch(numb, arr, hi);
             break;
         case 2:
-            cout << "You have chosen the binary search algorithm" << endl;
+            cout << "You chose the binary search algorithm\n" << endl;
             numb = numInput();
-            cout << "Searching the number " << numb << " in a " << hi << " element array using binary search" << endl;
+            cout << "Searching the number " << numb << " in a " << hi << " element array using binary search\n" << endl;
             binarySearch(numb, arr, hi, lo, hi);
             break;
         default:
-            cout << "Please choose an appropriate integer\n" << endl;
+            cout << "Please choose an appropriate integer" << endl;
     }
     return 0;
 }
