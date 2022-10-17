@@ -65,7 +65,7 @@ void binarySearch(int number, int *arra, int count, int low, int high) {
 
 
 int main() {
-    int arr[] = {1, 5, 17, 20, 22, 29, 46, 50, 69, 77, 89, 93};
+    int arr[] = {2, 3, 5, 11, 17, 20, 22, 29, 32, 36, 39, 41, 42, 46, 50, 55, 56, 57, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 72, 77, 80, 85, 88, 89, 91, 93, 95, 96, 98};
     int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
     cout << "Which algorithm would you like to run? Enter an integer:" << endl;
     cout << "1. linear search,   2. binary search (requires ordered array)" << endl;
