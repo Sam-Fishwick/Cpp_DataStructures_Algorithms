@@ -28,9 +28,9 @@ void linearSearch(int nu, int *array, int n) {
     auto start = steady_clock::now();
     int i;
     for (i = 0; i < n; i++) {
-        cout << "Checking the number at position " << i+1 << " of the array" << endl;
+        cout << "Comparing to the value at position " << i << " of the array" << endl;
         if (array[i] == nu) {
-            cout << "The number " << nu << " is at position " << i+1 << " in the array\n" << endl;
+            cout << "The number " << nu << " is at position " << i << " in the array\n" << endl;
             break;
         }
     }
@@ -38,28 +38,27 @@ void linearSearch(int nu, int *array, int n) {
         cout << "The number " << nu << " isn't in the array\n" << endl;
     }
     auto dur = steady_clock::now() - start;
-    cout << "This linear search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
+    cout << "Linear search run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
 }
 
 
 void binarySearch(int number, int *arra, int count, int low, int high) {
     auto start = steady_clock::now();
     int mid = (low + high)/2;
-    if (low > high || mid+1 > high) {
+    cout << "Comparing to the value at position " << mid << " of the array" << endl;
+    if (low > high || (mid >= high && number != arra[mid])) {
         cout << "The number " << number << " isn't in the array\n" << endl;
         auto dur = steady_clock::now() - start;
-        cout << "This binary search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
+        cout << "Binary search run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number == arra[mid]) {
-        cout << "The number " << number << " is at position " << mid+1 << " in the sorted array\n" << endl;
+        cout << "The number " << number << " is at position " << mid << " in the array\n" << endl;
         auto dur = steady_clock::now() - start;
-        cout << "This binary search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
+        cout << "Binary search run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number > arra[mid]) {
-        cout << "The number is higher than the value at the middle position " << mid+1 << " in the scope" << endl;
-        cout << "Removing all elements below this position from the scope" << endl;
+        cout << "Your number is above this value. Removing all elements below this position from the scope" << endl;
         binarySearch(number, arra, count, mid+1, high);
     } else if (number < arra[mid]) {
-        cout << "The number is lower than the value at the middle position " << mid+1 << " in the scope" << endl;
-        cout << "Removing all elements above this position from the scope" << endl;
+        cout << "Your number is below this value. Removing all elements above this position from the scope" << endl;
         binarySearch(number, arra, count, low, mid-1);
     }
 }
@@ -87,7 +86,7 @@ int main() {
             cout << "You chose the binary search algorithm\n" << endl;
             numb = numInput();
             cout << "Searching the number " << numb << " in a " << hi << " element array using binary search\n" << endl;
-            binarySearch(numb, arr, hi, lo, hi);
+            binarySearch(numb, arr, hi, lo, hi-1);
             break;
         default:
             cout << "Please choose an appropriate integer" << endl;
