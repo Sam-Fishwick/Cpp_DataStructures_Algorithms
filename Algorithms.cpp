@@ -3,6 +3,10 @@
 using std::cout;
 using std::endl;
 using std::cin;
+using std::chrono::steady_clock;
+using std::chrono::duration_cast;
+using std::chrono::milliseconds;
+using std::chrono::time_point;
 
 int numInput() {
     int num;
@@ -21,7 +25,7 @@ int numInput() {
 
 
 void linearSearch(int nu, int *array, int n) {
-    auto old = std::chrono::steady_clock::now();
+    auto start = steady_clock::now();
     int i;
     for (i = 0; i < n; i++) {
         cout << "Checking the number at position " << i+1 << " of the array" << endl;
@@ -33,29 +37,29 @@ void linearSearch(int nu, int *array, int n) {
     if (i == n) {
         cout << "The number " << nu << " isn't in the array\n" << endl;
     }
-    auto dur = std::chrono::steady_clock::now() - old;
-    cout << "This linear search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
+    auto dur = steady_clock::now() - start;
+    cout << "This linear search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
 }
 
 
 void binarySearch(int number, int *arra, int count, int low, int high) {
-    auto old = std::chrono::steady_clock::now();
+    auto start = steady_clock::now();
     int mid = (low + high)/2;
     if (low > high || mid+1 > high) {
         cout << "The number " << number << " isn't in the array\n" << endl;
-        auto dur = std::chrono::steady_clock::now() - old;
-        cout << "This binary search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
+        auto dur = steady_clock::now() - start;
+        cout << "This binary search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number == arra[mid]) {
-        cout << "The number " << number << " is at position " << mid+1 << " in the array\n" << endl;
-        auto dur = std::chrono::steady_clock::now() - old;
-        cout << "This binary search algorithm took " << std::chrono::duration_cast<std::chrono::milliseconds>(dur).count() << " ms" << endl;
+        cout << "The number " << number << " is at position " << mid+1 << " in the sorted array\n" << endl;
+        auto dur = steady_clock::now() - start;
+        cout << "This binary search algorithm took " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number > arra[mid]) {
-        cout << "The number " << number << " is higher than the value at position " << mid+1 << " in the array" << endl;
-        cout << "Removing all elements equal to or lesser than " << arra[mid] << " from the scope" << endl;
+        cout << "The number is higher than the value at the middle position " << mid+1 << " in the scope" << endl;
+        cout << "Removing all elements below this position from the scope" << endl;
         binarySearch(number, arra, count, mid+1, high);
     } else if (number < arra[mid]) {
-        cout << "The number " << number << " is lower than the value at position " << mid+1 << " in the array" << endl;
-        cout << "Removing all elements equal to or greater than " << arra[mid] << " from the scope" << endl;
+        cout << "The number is lower than the value at the middle position " << mid+1 << " in the scope" << endl;
+        cout << "Removing all elements above this position from the scope" << endl;
         binarySearch(number, arra, count, low, mid-1);
     }
 }
