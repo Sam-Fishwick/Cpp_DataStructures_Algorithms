@@ -15,3 +15,11 @@ To-do:
     - Linked list
     - Binary tree
     - Hash table
+
+
+- Contribution:
+    - [Luke Fishwick](https://github.com/LucasFishwicas)
+        Done:
+        - Added Bubble Sort written in C
+        To-do:
+        - Refactor Algorithm from C to C++
