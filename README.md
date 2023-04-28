@@ -19,7 +19,7 @@ To-do:
 
 - Contribution:
     - [Luke Fishwick](https://github.com/LucasFishwicas)
-        Done:
+        -Done:
         - Added Bubble Sort written in C
-        To-do:
+        -To-do:
         - Refactor Algorithm from C to C++
