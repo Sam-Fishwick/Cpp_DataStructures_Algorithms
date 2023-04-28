@@ -8,7 +8,51 @@ using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 using std::chrono::time_point;
 
-int numInput() {
+int numInput(); 
+
+void linearSearch(int nu, int *array, int n);
+
+void binarySearch(int number, int *arra, int count, int low, int high);
+
+
+
+int main() 
+{
+    int arr[] = {2, 3, 5, 11, 17, 20, 22, 29, 32, 36, 39, 41, 42, 46, 50, 55, 56, 57, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 72, 77, 80, 85, 88, 89, 91, 93, 95, 96, 98};
+    int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
+    cout << "Which algorithm would you like to run? Enter an integer:" << endl;
+    cout << "1. linear search,   2. binary search (requires ordered array)" << endl;
+    cin >> input;
+    while (!(input == 1 || input == 2)) {
+        cout << "Please choose an appropriate integer" << endl;
+        cin.clear();
+        cin >> input;
+    }
+    switch (input) {
+        case 1:
+            cout << "You chose the linear search algorithm\n" << endl;
+            numb = numInput();
+            cout << "Searching the number " << numb << " in a " << hi << " element array using linear search\n" << endl;
+            linearSearch(numb, arr, hi);
+            break;
+        case 2:
+            cout << "You chose the binary search algorithm\n" << endl;
+            numb = numInput();
+            cout << "Searching the number " << numb << " in a " << hi << " element array using binary search\n" << endl;
+            binarySearch(numb, arr, hi, lo, hi-1);
+            break;
+        default:
+            cout << "Please choose an appropriate integer" << endl;
+    }
+    return 0;
+}
+
+
+
+
+
+int numInput() 
+{
     int num;
     cout << "Type an integer between 1 and 99" << endl;
     cin >> num;
@@ -71,7 +115,8 @@ int numInput() {
 */
 
 
-void linearSearch(int nu, int *array, int n) {
+void linearSearch(int nu, int *array, int n) 
+{
     auto start = steady_clock::now();
     int i;
     for (i = 0; i < n; i++) {
@@ -89,7 +134,8 @@ void linearSearch(int nu, int *array, int n) {
 }
 
 
-void binarySearch(int number, int *arra, int count, int low, int high) {
+void binarySearch(int number, int *arra, int count, int low, int high) 
+{
     auto start = steady_clock::now();
     int mid = (low + high)/2;
     cout << "Comparing to the value at position " << mid << " of the array" << endl;
@@ -111,33 +157,5 @@ void binarySearch(int number, int *arra, int count, int low, int high) {
 }
 
 
-int main() {
-    int arr[] = {2, 3, 5, 11, 17, 20, 22, 29, 32, 36, 39, 41, 42, 46, 50, 55, 56, 57, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 72, 77, 80, 85, 88, 89, 91, 93, 95, 96, 98};
-    int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
-    cout << "Which algorithm would you like to run? Enter an integer:" << endl;
-    cout << "1. linear search,   2. binary search (requires ordered array)" << endl;
-    cin >> input;
-    while (!(input == 1 || input == 2)) {
-        cout << "Please choose an appropriate integer" << endl;
-        cin.clear();
-        cin >> input;
-    }
-    switch (input) {
-        case 1:
-            cout << "You chose the linear search algorithm\n" << endl;
-            numb = numInput();
-            cout << "Searching the number " << numb << " in a " << hi << " element array using linear search\n" << endl;
-            linearSearch(numb, arr, hi);
-            break;
-        case 2:
-            cout << "You chose the binary search algorithm\n" << endl;
-            numb = numInput();
-            cout << "Searching the number " << numb << " in a " << hi << " element array using binary search\n" << endl;
-            binarySearch(numb, arr, hi, lo, hi-1);
-            break;
-        default:
-            cout << "Please choose an appropriate integer" << endl;
-    }
-    return 0;
-}
+
 
