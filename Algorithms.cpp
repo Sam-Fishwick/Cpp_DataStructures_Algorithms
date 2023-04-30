@@ -8,12 +8,13 @@ using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 using std::chrono::time_point;
 
-int numInput(); 
+int numInput();
+
+//int* bubbleSort();
 
 void linearSearch(int nu, int *array, int n);
 
 void binarySearch(int number, int *arra, int count, int low, int high);
-
 
 
 int main() 
@@ -48,9 +49,6 @@ int main()
 }
 
 
-
-
-
 int numInput() 
 {
     int num;
@@ -69,7 +67,6 @@ int numInput()
 
 
 /*  --  Bubble Sort -- 
-
  int bubbleSort()
  {
 
