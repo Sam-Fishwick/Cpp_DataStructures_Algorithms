@@ -69,7 +69,8 @@ int numInput()
 /*  --  Bubble Sort -- 
  int bubbleSort()
  {
-
+    auto start = steady_clock::now();
+    
     // initialise array
     int arr[5];
  
@@ -101,6 +102,9 @@ int numInput()
     for(int i = 0; i < length; i++) {
         cout << arr[i] << endl;
     }
+    auto dur = steady_clock::now() - start;
+    cout << "Bubble sort run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
+    
     return arr;
 }
 */
