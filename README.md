@@ -21,4 +21,5 @@ To-do:
     - [Luke Fishwick](https://github.com/LucasFishwicas)
         - Done:
             - Added Bubble Sort written in C
-            - Refactor Algorithm from C to C++
+            - Refactor Algorithm from C to C++ 
+            - Use Bubble Sort in Main (Modified arr to be unsorted)
