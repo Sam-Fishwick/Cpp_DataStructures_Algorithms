@@ -11,15 +11,15 @@ using std::chrono::time_point;
 
 int numInput();
 
-
-int bubbleSort(int arr[],int length);
-
+void bubbleSort(int arr[],int length);
 
 void linearSearch(int nu, int array[], int n);
 
-
 void binarySearch(int number, int arra[], int count, int low, int high);
 
+void linearSearch(int nu, int array[], int n);
+
+void binarySearch(int number, int arra[], int count, int low, int high);
 
 
 int main() 
@@ -89,14 +89,11 @@ int numInput()
 
 
 //  --  Bubble Sort -- 
-int bubbleSort(int arr[],int length)
+void bubbleSort(int arr[],int length)
 {
     // Start run-time clock
     auto start = steady_clock::now();
-    
-  
     cout << "[Random] Unsorted Array:" << endl;
-
     // Print all elements in arr[]
     for(int i = 0; i < length; i++) {
         if(i == 0) {
@@ -107,9 +104,7 @@ int bubbleSort(int arr[],int length)
         
         if(i == length-1) cout << "]" << endl << endl;
     }
- 
     int temp = 0;
- 
     // Swap i with i+1 if i>(i+1)
     for(int i = 0; i < length-1; i++) {
         for(int j = i+1; j < length; j++) {
@@ -130,8 +125,14 @@ int bubbleSort(int arr[],int length)
         << endl << endl;
 
 
+    cout << "Sorting with Bubble Sort...";
+
+    // End run-time clock
+    auto dur = steady_clock::now() - start;
+    // Print run-time
+    cout << " [took " << duration_cast<milliseconds>(dur).count() << " ms]" << endl << endl;
+
     cout << "[Bubble] Sorted Array:" << endl;
-    
     // Print all elements in arr[]
     for(int i = 0; i < length; i++) {
         if(i == 0) {
@@ -143,7 +144,6 @@ int bubbleSort(int arr[],int length)
         if(i == length-1) cout << "]" << endl << endl;
     }
 
-    return 0;
 }
 
 
