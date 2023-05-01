@@ -15,10 +15,10 @@ int numInput();
 int bubbleSort(int arr[],int length);
 
 
-void linearSearch(int nu, int *array, int n);
+void linearSearch(int nu, int array[], int n);
 
 
-void binarySearch(int number, int *arra, int count, int low, int high);
+void binarySearch(int number, int arra[], int count, int low, int high);
 
 
 
@@ -148,7 +148,7 @@ int bubbleSort(int arr[],int length)
 
 
 
-void linearSearch(int nu, int *array, int n) 
+void linearSearch(int nu, int array[], int n) 
 {
     auto start = steady_clock::now();
     int i;
@@ -172,7 +172,7 @@ void linearSearch(int nu, int *array, int n)
 }
 
 
-void binarySearch(int number, int *arra, int count, int low, int high) 
+void binarySearch(int number, int arra[], int count, int low, int high) 
 {
     auto start = steady_clock::now();
     int mid = (low + high)/2;
