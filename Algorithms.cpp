@@ -24,7 +24,8 @@ void binarySearch(int number, int *arra, int count, int low, int high);
 
 int main() 
 {
-    int arr[] = {
+    int arr[] = 
+    {
         2,99,66,3,24,87,64,10,11,13,12,28,29,30,74,82,91,41,42,
         54,21,3,6,16,82,50,15,98,89,76,45,52,38,49,22,19,67
     };
