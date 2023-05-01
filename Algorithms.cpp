@@ -10,7 +10,7 @@ using std::chrono::time_point;
 
 int numInput();
 
-//int* bubbleSort();
+int bubbleSort(int arr[],int length);
 
 void linearSearch(int nu, int *array, int n);
 
@@ -19,8 +19,15 @@ void binarySearch(int number, int *arra, int count, int low, int high);
 
 int main() 
 {
-    int arr[] = {2, 3, 5, 11, 17, 20, 22, 29, 32, 36, 39, 41, 42, 46, 50, 55, 56, 57, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 72, 77, 80, 85, 88, 89, 91, 93, 95, 96, 98};
+    int arr[] = {2,99,66,3,24,87,64,10,11,13,12,28,29,30,74,82,91,41,42,54,21,3,6,16,82,50,15,98,89,76,45,52,38,49,22,19,67};
+
+    // How many ints (4 bytes) in arr[]
+    int length = sizeof(arr)/sizeof(arr[0]);
+
+    bubbleSort(arr,length);
+
     int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
+
     cout << "Which algorithm would you like to run? Enter an integer:" << endl;
     cout << "1. linear search,   2. binary search (requires ordered array)" << endl;
     cin >> input;
@@ -66,24 +73,23 @@ int numInput()
 }
 
 
-/*  --  Bubble Sort -- 
- int bubbleSort()
- {
+//  --  Bubble Sort -- 
+int bubbleSort(int arr[],int length)
+{
+    // Start run-time clock
     auto start = steady_clock::now();
     
-    // initialise array
-    int arr[5];
- 
-    // Take user input
-    cout << "Enter an array of 5 integers:\n" << endl;
-    cin >> arr[0] >> arr[1] >> arr[2] >> arr[3] >> arr[4];
- 
-    // How many ints (4 bytes) in arr[]
-    int length = sizeof(arr)/sizeof(arr[0]);
- 
+  
+    cout << "[Random] Unsorted Array:" << endl;
+
     // Print all elements in arr[]
     for(int i = 0; i < length; i++) {
-        cout << arr[i] << endl;
+        if(i == 0) {
+            cout << "[" << arr[i];
+        } else { 
+            cout << "," << arr[i] ;
+        }
+        if(i == length-1) cout << "]" << endl << endl;
     }
  
     int temp = 0;
@@ -98,16 +104,33 @@ int numInput()
             }
         }
     }
+
+
+    cout << "Sorting with Bubble Sort...";
+
+
+    // End run-time clock
+    auto dur = steady_clock::now() - start;
+    // Print run-time
+    cout << " [took " << duration_cast<milliseconds>(dur).count() << " ms]" << endl << endl;
+
+
+    cout << "[Bubble] Sorted Array:" << endl;
+    
     // Print all elements in arr[]
     for(int i = 0; i < length; i++) {
-        cout << arr[i] << endl;
+        if(i == 0) {
+            cout << "[" << arr[i];
+        } else { 
+            cout << "," << arr[i] ;
+        }
+        if(i == length-1) cout << "]" << endl << endl;
     }
-    auto dur = steady_clock::now() - start;
-    cout << "Bubble sort run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
-    
-    return arr;
+
+   
+    return 0;
 }
-*/
+
 
 
 void linearSearch(int nu, int *array, int n) 
@@ -117,7 +140,7 @@ void linearSearch(int nu, int *array, int n)
     for (i = 0; i < n; i++) {
         cout << "Comparing to the value at position " << i << " of the array" << endl;
         if (array[i] == nu) {
-            cout << "The number " << nu << " is at position " << i << " in the array\n" << endl;
+            cout << "The first instance of the number " << nu << " is at position " << i << " in the array\n" << endl;
             break;
         }
     }
@@ -139,7 +162,7 @@ void binarySearch(int number, int *arra, int count, int low, int high)
         auto dur = steady_clock::now() - start;
         cout << "Binary search run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number == arra[mid]) {
-        cout << "The number " << number << " is at position " << mid << " in the array\n" << endl;
+        cout << "The first instance of the number " << number << " is at position " << mid << " in the array\n" << endl;
         auto dur = steady_clock::now() - start;
         cout << "Binary search run-time: " << duration_cast<milliseconds>(dur).count() << " ms" << endl;
     } else if (number > arra[mid]) {
