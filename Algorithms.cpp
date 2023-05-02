@@ -17,9 +17,6 @@ void linearSearch(int nu, int array[], int n);
 
 void binarySearch(int number, int arra[], int count, int low, int high);
 
-void linearSearch(int nu, int array[], int n);
-
-void binarySearch(int number, int arra[], int count, int low, int high);
 
 
 int main() 
