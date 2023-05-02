@@ -1,4 +1,4 @@
-# DataStructures_Algorithms
+# Data Structures & Algorithms
 
 This is a repository dedicated to common Data Structures and Algorithms encountered in computer science.
 
