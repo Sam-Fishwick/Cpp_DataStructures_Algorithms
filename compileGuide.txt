@@ -1,0 +1,3 @@
+g++ file-path -o exe-name
+e.g., g++ .\Algorithms.cpp -o Algorithms
+    >> Algorithms.exe

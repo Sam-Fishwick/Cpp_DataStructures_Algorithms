@@ -144,7 +144,6 @@ void bubbleSort(int arr[],int length)
 }
 
 
-
 void linearSearch(int nu, int array[], int n) 
 {
     auto start = steady_clock::now();
@@ -205,6 +204,4 @@ void binarySearch(int number, int arra[], int count, int low, int high)
         binarySearch(number, arra, count, low, mid-1);
     }
 }
-
-
 
