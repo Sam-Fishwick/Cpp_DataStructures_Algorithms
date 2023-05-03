@@ -27,6 +27,8 @@ void binarySearch(int number, int arra[], int count, int low, int high);
 
     "\033c" has the same affect in c++ as "\x1Bc" has in rust
         e.g. clears terminal screen
+
+ * DOESNT SEEM TO WORK (atleast on windows)
 */
 
 int main() 
@@ -44,7 +46,7 @@ int main()
 
     int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
 
-    cout << "\033c" << endl;
+    //cout << "\033C" << endl;
     cout << "Which algorithm would you like to run? Enter an integer:" << endl;
     cout << "1. linear search,   2. binary search (requires ordered array)" 
         << endl;
