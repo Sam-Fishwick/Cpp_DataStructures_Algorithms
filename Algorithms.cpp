@@ -32,7 +32,7 @@ void binarySearch(int number, int arra[], int count, int low, int high);
  * DOESNT SEEM TO WORK (atleast on windows)
  *
  * the stdlib.h header allows use of system function which can give commands
- * to the terminal (e.g., cls; clears the screen):w
+ * to the terminal (e.g., cls; clears the screen)
  * 
 */
 
