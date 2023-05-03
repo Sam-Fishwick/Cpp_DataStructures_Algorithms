@@ -1,3 +1,13 @@
-g++ file-path -o exe-name
-e.g., g++ .\Algorithms.cpp -o Algorithms
-    >> Algorithms.exe
+Windows:
+    g++ file-path -o exe-name
+    e.g., "g++ .\Algorithms.cpp -o Algorithms"
+        >> Algorithms.exe
+
+
+
+Mac:
+    g++ file-path -o exe-name
+    e.g., "g++ Algorithms.cpp -o TEST"
+        >> TEST.out
+
+    default <exe-name> = a.out
