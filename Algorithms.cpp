@@ -18,6 +18,16 @@ void linearSearch(int nu, int array[], int n);
 void binarySearch(int number, int arra[], int count, int low, int high);
 
 
+/* --  COPIED FROM RUSTLINGS SOURCE CODE TO TEST HERE  --
+ * Clears the terminal with an ANSI escape code.
+ *  Works in UNIX and newer Windows terminals. 
+    fn clear_screen() {
+        println!("\x1Bc");
+    }
+
+    "\033c" has the same affect in c++ as "\x1Bc" has in rust
+        e.g. clears terminal screen
+*/
 
 int main() 
 {
@@ -34,6 +44,7 @@ int main()
 
     int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
 
+    cout << "\033c" << endl;
     cout << "Which algorithm would you like to run? Enter an integer:" << endl;
     cout << "1. linear search,   2. binary search (requires ordered array)" 
         << endl;
@@ -121,13 +132,6 @@ void bubbleSort(int arr[],int length)
     cout << " [took " << duration_cast<milliseconds>(dur).count() << " ms]" 
         << endl << endl;
 
-
-    cout << "Sorting with Bubble Sort...";
-
-    // End run-time clock
-    auto dur = steady_clock::now() - start;
-    // Print run-time
-    cout << " [took " << duration_cast<milliseconds>(dur).count() << " ms]" << endl << endl;
 
     cout << "[Bubble] Sorted Array:" << endl;
     // Print all elements in arr[]
