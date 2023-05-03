@@ -1,13 +1,16 @@
-Windows:
+Sam [Windows]:
     g++ file-path -o exe-name
     e.g., "g++ .\Algorithms.cpp -o Algorithms"
         >> Algorithms.exe
 
 
 
-Mac:
+Luke [Mac]:
     g++ file-path -o exe-name
     e.g., "g++ Algorithms.cpp -o TEST"
-        >> TEST.out
+        >> TEST
 
     default <exe-name> = a.out
+    (In GUI File System, a.out is considered a Document,
+        but TEST is considered a Unix Executable
+        both run in terminal but a.out fails to open in GUI)
