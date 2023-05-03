@@ -5,10 +5,9 @@ encountered in computer science.
 
 These are written in the low level language C++.
 
-This repository currently contains a programme for Linear- and Binary-Search in 
-Algorithms.cpp.
+<br/>
 
-Done:
+### Done:
 - Algorithms:
     - Searching:
         - Linear-Search
@@ -19,7 +18,10 @@ Done:
             - Make it a standalone option for user in main and/or automatically run
             when sorted array is required for other algorithms (e.g., binary search;
             perhaps refuse to run binary search before a sorting algorithm is performed?)
-To-do:
+
+<br/>
+
+### To-do:
 - Algorithms:
     - Searching:
         - To be determined
@@ -31,10 +33,11 @@ To-do:
     - Binary tree
     - Hash table
 
+<br/>
 
-- Contribution:
-    - [Luke Fishwick](https://github.com/LucasFishwicas)
-        - Done:
-            - Added Bubble Sort written in C
-            - Refactor Algorithm from C to C++ 
-            - Use Bubble Sort in Main (Modified arr to be unsorted)
+## Contributions:
+- [Luke Fishwick](https://github.com/LucasFishwicas)
+    - Done:
+        - Added Bubble Sort written in C
+        - Refactor Algorithm from C to C++ 
+        - Use Bubble Sort in Main (Modified arr to be unsorted)
