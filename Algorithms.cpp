@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+//#include <stdlib.h>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -29,6 +30,10 @@ void binarySearch(int number, int arra[], int count, int low, int high);
         e.g. clears terminal screen
 
  * DOESNT SEEM TO WORK (atleast on windows)
+ *
+ * the stdlib.h header allows use of system function which can give commands
+ * to the terminal (e.g., cls; clears the screen):w
+ * 
 */
 
 int main() 
@@ -47,6 +52,7 @@ int main()
     int input, numb, lo = 0, hi = sizeof(arr)/sizeof(arr[0]);
 
     //cout << "\033C" << endl;
+    //system("cls");
     cout << "Which algorithm would you like to run? Enter an integer:" << endl;
     cout << "1. linear search,   2. binary search (requires ordered array)" 
         << endl;
