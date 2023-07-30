@@ -1,0 +1,25 @@
+Data Structures
+
+Linked List
+- A Node object which consists of a value and at least 1 pointer to another Node
+object.
+- Pointers are typically Next (or Previous in the case of 2 pointers).
+
+Binary Tree
+- A "Parent" Node object which consists of a value and pointers to 2 other 
+"Child" Node objects.
+- Pointers are typically Left and Right, and conditions are set to determine 
+in which direction new Nodes are formed when adding new values.
+- Tree can be traversed various ways, with most coming under either 
+Breadth-First-Search or Depth-First-Search traversals.
+
+Hash Map
+- An object which consists of an Array and a Hash Function.
+- The Hash Function takes a String as input and gives a pseudo-random integer
+as an output, which can be mathematically associated with an index in the Array.
+- Given a Value and a String, the Value can be stored at a pseudo-random index
+in the Array, determined by the Hash Function.
+- The Value can then be accessed by the associated String, allowing for rapid
+Search Algorithms.
+- In order to avoid "Collisions", sub-Arrays can be used at indices with more
+than 1 Value, called "Chaining".
